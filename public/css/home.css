@@ -1,0 +1,83 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+body{
+height: 100vh;
+
+}
+
+
+.add-bill-container{
+height: 35vh;
+background: red;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+/* align-items: center; */
+
+}
+.user-name{
+
+    align-self: flex-start;
+    padding: 15px;
+}
+
+.details-input{
+
+    height: 40px;
+    width: 350px;
+}
+
+.money-input{
+  
+    height: 40px;
+    width: 90px;  
+}
+
+#category{
+
+    height: 40px;
+    width: 200px; 
+
+}
+
+.add-bill{
+
+    height: 40px;
+    width: 200px; 
+background-color: black;
+color: aliceblue;
+border: none;
+}
+
+
+.input-container{
+display: flex;
+width: 100%;
+/* justify-content: space-evenly; */
+background-color: rgb(0, 240, 240);
+
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.insert-bill-container{
+height: 75vh;
+background: blanchedalmond;
+
+}
+
+
+
+.bill{
+background: blueviolet;
+
+}
