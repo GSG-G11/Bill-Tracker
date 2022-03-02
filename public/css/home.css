@@ -17,7 +17,8 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
-background-color:rgb(96, 188, 241);
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(128,128,215,1) 23%, rgba(0,212,255,1) 100%);
 
 }
 .user-name{
@@ -118,6 +119,10 @@ color: aliceblue;
 border: none;
 
 }
+input{
+    border-radius: 3px;
+   
+    border: none;
 
 button{
     cursor: pointer;
