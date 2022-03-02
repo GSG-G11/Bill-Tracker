@@ -43,4 +43,23 @@ signInForm.addEventListener('submit', (e) => {
 
 signUpForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  const userName = signUpUserNameInput.value.trim();
+  const password = signUpPasswordInput.value.trim();
+  const confirmPassword = signUpConfirmNewPasswordInput.value.trim();
+  if (password === confirmPassword) {
+    postJsonData('/sign-up', { userName, password, confirmPassword }).then((data) => {
+      if (data.status !== 'error') {
+        const signInData = {
+          userName: data.data.user_name,
+          password: data.data.password,
+        };
+        localStorage.setItem('signInData', JSON.stringify(signInData));
+        location.href = '/home';
+      } else {
+        alert(data.message);
+      }
+    });
+  } else {
+    alert('password and confirm password not match');
+  }
 });
