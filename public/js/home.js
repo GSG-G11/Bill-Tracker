@@ -20,7 +20,33 @@ const postJsonData = (endpoint, dataObj) => fetch(endpoint, {
 
 const deleteBill = (id) => {};
 
-const loadDataIntoDom = (data) => {};
+const loadDataIntoDom = (data) => {
+  data.forEach((category) => {
+    const oneBillDiv = document.createElement('Div');
+    const detailsSpan = document.createElement('span');
+    const moneySpan = document.createElement('span');
+    const categorySpan = document.createElement('span');
+    const deleteBtn = document.createElement('button');
+
+    detailsSpan.textContent = category.details;
+    moneySpan.textContent = ` ${category.amount}$ `;
+    categorySpan.textContent = addCategorySelect.querySelector(`option[value="${category.category_id}"]`).textContent;
+    deleteBtn.textContent = ' Delete';
+
+    categorySpan.setAttribute('value', category.category_id);
+    oneBillDiv.setAttribute('class', 'bill');
+    detailsSpan.setAttribute('class', 'details');
+    moneySpan.setAttribute('class', 'money');
+    categorySpan.setAttribute('class', 'category');
+    deleteBtn.setAttribute('class', 'del');
+
+    billContent.appendChild(oneBillDiv);
+    oneBillDiv.appendChild(detailsSpan);
+    oneBillDiv.appendChild(moneySpan);
+    oneBillDiv.appendChild(categorySpan);
+    oneBillDiv.appendChild(deleteBtn);
+  });
+};
 
 const getBills = ({ userName, password, showCategoryId: categoryId }) => {
   postJsonData('/get-bills', { userName, password, categoryId })
