@@ -9,8 +9,19 @@ const deleteBill = (req, res) => {
       .then((data) => {
         if (data.rows.length === 1) {
           const userId = data.rows[0].id;
-
-          return deleteBillQuery({ billId, userId });
+          return deleteBillQuery({ billId, userId })
+            .then((data2) => {
+              if (data2.rowCount === 1) {
+                return res.json({
+                  status: 'deleted',
+                  message: 'deleted',
+                });
+              }
+              return res.json({
+                status: 'error',
+                message: 'wrong bill id ',
+              });
+            });
         }
         return res.json({
           status: 'error',
