@@ -13,17 +13,19 @@ height: 100vh;
 
 .add-bill-container{
 height: 35vh;
-background: red;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-/* align-items: center; */
+align-items: center;
+background-color:rgb(96, 188, 241);
 
 }
 .user-name{
 
     align-self: flex-start;
     padding: 15px;
+    font-size: 26px;
+   
 }
 
 .details-input{
@@ -39,7 +41,7 @@ justify-content: space-between;
 }
 
 #category{
-
+    padding-left: 15px;
     height: 40px;
     width: 200px; 
 
@@ -52,32 +54,58 @@ justify-content: space-between;
 background-color: black;
 color: aliceblue;
 border: none;
+align-self: flex-end;
+margin:15px 15px;
 }
 
 
 .input-container{
 display: flex;
 width: 100%;
-/* justify-content: space-evenly; */
-background-color: rgb(0, 240, 240);
+
 
 }
 
 .inputs{
     display: flex;
-    justify-content: space-between;
+  width: 100%;
+  justify-content:center;
+  margin: 15px;
+  
     
+}
+.money-input{
+margin: 0px 20px;
 }
 
 .insert-bill-container{
 height: 75vh;
-background: blanchedalmond;
+
+
+
 
 }
 
+#category-select{
+    display: block;
+position: relative;
+left: 40%;
+    height: 40px;
+    width: 200px; 
+   margin-top: 15px;
+   padding: 10px;
+}
 
 
 .bill{
-background: blueviolet;
+background: rgb(96, 188, 241);
+margin: 15px 15px;
+padding: 15px;
+text-align: center;
+font-size: 30px;
+border-radius: 10px;
+}
+.money{
 
+    color: red;
 }
