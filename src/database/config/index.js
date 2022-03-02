@@ -1,3 +1,4 @@
 const connection = require('./connection');
+const { dbBuild } = require('./build');
 
-module.exports = connection;
+module.exports = { connection, dbBuild };

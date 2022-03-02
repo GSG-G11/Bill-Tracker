@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS users,categories,bills CASCADE;
 
 CREATE TABLE "users" (
   "id" SERIAL PRIMARY KEY,
-  "full_name" varchar(100) NOT NULL,
+  "user_name" varchar(100) NOT NULL,
   "password" varchar(20) NOT NULL
 );
 
