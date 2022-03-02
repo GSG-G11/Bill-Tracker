@@ -8,38 +8,50 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Bill Tracker</h1>
-    </header>
-    <main>
-        <button class="sign-in-up">New User?</button>
-        <form action="#" class="sign-in-form">
-            <div class="row">
-                <label for="user_name">User Name
-                    <input type="text" name="user_name" id="user_name" minlength="3" required>
+    <div class="container">
+        <header>
+            <h1>Bill Tracker</h1>
+        </header>
+        <main>
+            <button class="sign-in-up">New User?</button>
+            <form action="#" class="sign-in-form">
+                <div class="row">
+                    <label for="user_name">User Name
+                        <input type="text" name="user_name" id="user_name" minlength="3" required>
+                    </label>
+                </div>
+                <div class="row">
+                    <label for="password">Password
+                        <input type="password" name="password" id="password" minlength="3" required>
+                    </label>
+                </div>
+                <button class="sign-in-btn">Sign in</button>            
+            </form>
+            <form action="#" class="sign-up-form disable">
+                <div class="row">
+                <label for="new-user-name">
+                    User Name
+                   
                 </label>
-            </div>
-            <div class="row">
-                <label for="password">Password
-                    <input type="password" name="password" id="password" minlength="3" required>
-                </label>
-            </div>
-            <button class="sign-in-btn">Sign in</button>            
-        </form>
-        <form action="#" class="sign-up-form disable">
-            <label for="new-user-name">
-                User Name
                 <input type="text" name="new-user-name" id="new-user-name" minlength="3" required>
-            </label>
-            <label for="new-password">New Password
+            </div>
+            <div class="row">
+                <label for="new-password">New Password
+                   
+                </label>
                 <input type="password" name="new-password" id="new-password" minlength="3" required>
-            </label>
-            <label for="confirm-new-password">Confirm Password
+            </div>
+            <div class="row">
+                <label for="confirm-new-password">Confirm Password
+               
+                </label>
                 <input type="password" name="confirm-new-password" id="confirm-new-password" minlength="3" required>
-            </label>
+            </div>
             <button class="sign-up-btn">Sign up</button>
-        </form>
-    </main>
+            </form>
+        </main>
+    </div>
+   
 </body>
 <script src="./js/index.js"></script>
 </html>
