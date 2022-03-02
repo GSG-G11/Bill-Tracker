@@ -109,3 +109,12 @@ border-radius: 10px;
 
     color: red;
 }
+
+.del{
+    height: 40px;
+    width: 90px; 
+background-color: black;
+color: aliceblue;
+border: none;
+
+}
