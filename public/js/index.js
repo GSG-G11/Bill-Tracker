@@ -45,9 +45,9 @@ signUpForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const userName = signUpUserNameInput.value.trim();
   const password = signUpPasswordInput.value.trim();
-  const confirmPassword = signUpConfirmNewPasswordInput.value.trim();
-  if (password === confirmPassword) {
-    postJsonData('/sign-up', { userName, password, confirmPassword }).then((data) => {
+  const confirmPass = signUpConfirmNewPasswordInput.value.trim();
+  if (password === confirmPass) {
+    postJsonData('/sign-up', { userName, password, confirmPass }).then((data) => {
       if (data.status !== 'error') {
         const signInData = {
           userName: data.data.user_name,
