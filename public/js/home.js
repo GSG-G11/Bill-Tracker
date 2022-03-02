@@ -4,6 +4,7 @@ const addCategorySelect = document.querySelector('#category');
 const addBillBtn = document.querySelector('.add-bill');
 const showCategorySelect = document.querySelector('#category-select');
 const userNameLogo = document.querySelector('.user-name');
+let showCategoryId;
 
 const signInData = JSON.parse(localStorage.getItem('signInData'));
 userNameLogo.textContent = signInData?.userName;
@@ -16,6 +17,8 @@ const postJsonData = (endpoint, dataObj) => fetch(endpoint, {
   body: JSON.stringify(dataObj),
 })
   .then((res) => res.json());
+
+const deleteBill = (id) => {};
 
 const loadDataIntoDom = (data) => {};
 
@@ -33,7 +36,7 @@ addBillBtn.addEventListener('click', () => {
     const amount = addAmountInput.value.trim();
     const details = addDetailsInput.value.trim();
     const categoryId = addCategorySelect.value.trim();
-    const showCategoryId = showCategorySelect.value.trim();
+    showCategoryId = showCategorySelect.value.trim();
     postJsonData('/add-bill', {
       userName, password, amount, details, categoryId,
     })
@@ -42,4 +45,10 @@ addBillBtn.addEventListener('click', () => {
         getBills({ userName, password, showCategoryId });
       });
   }
+});
+
+showCategorySelect.addEventListener('change', () => {
+  showCategoryId = showCategorySelect.value.trim();
+  const { userName, password } = signInData;
+  getBills({ userName, password, showCategoryId });
 });
