@@ -15,18 +15,10 @@ if (NODE_ENV === 'test') {
 if (!DB_URL) {
   throw new Error('DB URL does not exist');
 }
-console.log(DB_URL);
-// const option = {
-//   connectionString: DB_URL,
-//   ssl: false,
-// };
-
-const option2 = {
-  database: 'track_system',
-  user: 'ibrahim',
-  password: '123456',
-  port: 5432,
+const option = {
+  connectionString: DB_URL,
   ssl: false,
 };
-const connection = new Pool(option2);
+
+const connection = new Pool(option);
 module.exports = connection;

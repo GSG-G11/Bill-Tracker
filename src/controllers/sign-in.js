@@ -1,12 +1,9 @@
-const connection = require('../database/config');
+const { checkUserNameAndPassword } = require('../database/query');
 
 const signIN = (req, res) => {
   const { userName, password } = req.body;
   if (userName && password) {
-    return connection.query({
-      text: 'SELECT * FROM users WHERE user_name=$1 AND password=$2  RETURNING *;',
-      values: [userName, password],
-    })
+    return checkUserNameAndPassword(userName, password)
       .then((data) => {
         if (data.rows.length === 1) {
           return res.json({
@@ -26,4 +23,4 @@ const signIN = (req, res) => {
   });
 };
 
-module.exports = signIN;
+module.exports = { signIN };
