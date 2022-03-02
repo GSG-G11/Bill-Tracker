@@ -33,3 +33,7 @@ input,label{
 .disable{
     display: none;
 }
+
+button{
+    cursor: pointer;
+}
