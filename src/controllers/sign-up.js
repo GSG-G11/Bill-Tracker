@@ -22,18 +22,18 @@ const signUp = (req, res) => { // refactor later
 
           return res.json({
             status: 'error',
-            messeage: 'username has already taken, try another one',
+            message: 'username has already taken, try another one',
           });
         });
     }
     return res.json({
       status: 'error',
-      messeage: 'password and its confirmation should be match',
+      message: 'password and its confirmation should be match',
     });
   }
   return res.json({
     status: 'error',
-    messeage: 'invalid input',
+    message: 'invalid input',
   });
 };
 
