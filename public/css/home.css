@@ -118,3 +118,7 @@ color: aliceblue;
 border: none;
 
 }
+
+button{
+    cursor: pointer;
+}
