@@ -4,7 +4,8 @@ const addCategorySelect = document.querySelector('#category');
 const addBillBtn = document.querySelector('.add-bill');
 const showCategorySelect = document.querySelector('#category-select');
 const userNameLogo = document.querySelector('.user-name');
-let showCategoryId;
+const billContent = document.querySelector('.content');
+let showCategoryId = showCategorySelect.value.trim();
 
 const signInData = JSON.parse(localStorage.getItem('signInData'));
 userNameLogo.textContent = signInData?.userName;
@@ -18,9 +19,15 @@ const postJsonData = (endpoint, dataObj) => fetch(endpoint, {
 })
   .then((res) => res.json());
 
-const deleteBill = (id) => {};
-
+const deleteBill = (id) => {
+  const { userName, password } = signInData;
+  postJsonData('/delete-bill', { userName, password, billId: id })
+    .then((data) => {
+      getBills({ userName, password, showCategoryId });
+    });
+};
 const loadDataIntoDom = (data) => {
+  billContent.innerHTML = '';
   data.forEach((category) => {
     const oneBillDiv = document.createElement('Div');
     const detailsSpan = document.createElement('span');
@@ -32,6 +39,7 @@ const loadDataIntoDom = (data) => {
     moneySpan.textContent = ` ${category.amount}$ `;
     categorySpan.textContent = addCategorySelect.querySelector(`option[value="${category.category_id}"]`).textContent;
     deleteBtn.textContent = ' Delete';
+    deleteBtn.onclick = () => deleteBill(category.id);
 
     categorySpan.setAttribute('value', category.category_id);
     oneBillDiv.setAttribute('class', 'bill');
@@ -51,7 +59,6 @@ const loadDataIntoDom = (data) => {
 const getBills = ({ userName, password, showCategoryId: categoryId }) => {
   postJsonData('/get-bills', { userName, password, categoryId })
     .then((data) => {
-      console.log(data);
       loadDataIntoDom(data);
     });
 };
@@ -67,14 +74,18 @@ addBillBtn.addEventListener('click', () => {
       userName, password, amount, details, categoryId,
     })
       .then((data) => {
-        console.log(data, showCategoryId);
         getBills({ userName, password, showCategoryId });
       });
   }
 });
 
 showCategorySelect.addEventListener('change', () => {
-  showCategoryId = showCategorySelect.value.trim();
   const { userName, password } = signInData;
+  showCategoryId = showCategorySelect.value.trim();
   getBills({ userName, password, showCategoryId });
 });
+
+(() => {
+  const { userName, password } = signInData;
+  getBills({ userName, password, showCategoryId });
+})();

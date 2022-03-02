@@ -84,4 +84,5 @@ background-color: black;
 color: aliceblue;
 border: none;
 align-self: center;
+    cursor: pointer;
 }
