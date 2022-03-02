@@ -1,6 +1,6 @@
 require('env2')('.env');
 
-const { POOL } = require('pg');
+const { Pool } = require('pg');
 
 let DB_URL = '';
 const { NODE_ENV } = process.env;
@@ -15,9 +15,18 @@ if (NODE_ENV === 'test') {
 if (!DB_URL) {
   throw new Error('DB URL does not exist');
 }
-const option = {
-  connectionString: DB_URL,
+console.log(DB_URL);
+// const option = {
+//   connectionString: DB_URL,
+//   ssl: false,
+// };
+
+const option2 = {
+  database: 'track_system',
+  user: 'ibrahim',
+  password: '123456',
+  port: 5432,
   ssl: false,
 };
-const connection = new POOL(option);
+const connection = new Pool(option2);
 module.exports = connection;
