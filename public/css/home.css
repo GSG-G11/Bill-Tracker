@@ -9,7 +9,7 @@ body {
 }
 
 .add-bill-container {
-  height: 35vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,6 +26,7 @@ body {
   align-self: flex-start;
   padding: 15px;
   font-size: 26px;
+  color: white;
 }
 
 .details-input {
@@ -70,7 +71,7 @@ body {
 }
 
 .insert-bill-container {
-  height: 75vh;
+  height: 20vh;
 }
 
 #category-select {
