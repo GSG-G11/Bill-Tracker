@@ -1,129 +1,113 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-height: 100vh;
-
+body {
+  height: 100vh;
 }
 
-
-.add-bill-container{
-height: 35vh;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(128,128,215,1) 23%, rgba(0,212,255,1) 100%);
-
+.add-bill-container {
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(128, 128, 215, 1) 23%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
-.user-name{
-
-    align-self: flex-start;
-    padding: 15px;
-    font-size: 26px;
-   
-}
-
-.details-input{
-
-    height: 40px;
-    width: 350px;
+.user-name {
+  align-self: flex-start;
+  padding: 15px;
+  font-size: 26px;
 }
 
-.money-input{
-  
-    height: 40px;
-    width: 90px;  
+.details-input {
+  height: 40px;
+  width: 350px;
 }
 
-#category{
-    padding-left: 15px;
-    height: 40px;
-    width: 200px; 
-
+.money-input {
+  height: 40px;
+  width: 90px;
 }
 
-.add-bill{
-
-    height: 40px;
-    width: 200px; 
-background-color: black;
-color: aliceblue;
-border: none;
-align-self: flex-end;
-margin:15px 15px;
+#category {
+  padding-left: 15px;
+  height: 40px;
+  width: 200px;
 }
 
-
-.input-container{
-display: flex;
-width: 100%;
-
-
+.add-bill {
+  height: 40px;
+  width: 200px;
+  background-color: black;
+  color: aliceblue;
+  border: none;
+  align-self: flex-end;
+  margin: 15px 15px;
 }
 
-.inputs{
-    display: flex;
+.input-container {
+  display: flex;
   width: 100%;
-  justify-content:center;
+}
+
+.inputs {
+  display: flex;
+  width: 100%;
+  justify-content: center;
   margin: 15px;
-  
-    
 }
-.money-input{
-margin: 0px 20px;
+.money-input {
+  margin: 0px 20px;
 }
 
-.insert-bill-container{
-height: 75vh;
-
-
-
-
+.insert-bill-container {
+  height: 75vh;
 }
 
-#category-select{
-    display: block;
-position: relative;
-left: 40%;
-    height: 40px;
-    width: 200px; 
-   margin-top: 15px;
-   padding: 10px;
+#category-select {
+  display: block;
+  position: relative;
+  left: 40%;
+  height: 40px;
+  width: 200px;
+  margin-top: 15px;
+  padding: 10px;
 }
 
-
-.bill{
-background: rgb(96, 188, 241);
-margin: 15px 15px;
-padding: 15px;
-text-align: center;
-font-size: 30px;
-border-radius: 10px;
+.bill {
+  background: rgb(96, 188, 241);
+  margin: 15px 15px;
+  padding: 15px;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 10px;
 }
-.money{
-
-    color: red;
+.money {
+  color: red;
 }
 
-.del{
-    height: 40px;
-    width: 90px; 
-background-color: black;
-color: aliceblue;
-border: none;
-
+.del {
+  height: 40px;
+  width: 90px;
+  background-color: black;
+  color: aliceblue;
+  border: none;
 }
-input{
-    border-radius: 3px;
-   
-    border: none;
+input {
+  border-radius: 3px;
+  border: none;
+}
 
-button{
-    cursor: pointer;
+button {
+  cursor: pointer;
+  margin-left: 20px;
 }
