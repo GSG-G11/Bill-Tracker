@@ -6,7 +6,7 @@ const signInPasswordInput = document.querySelector('#password');
 const signUpUserNameInput = document.querySelector('#new-user-name');
 const signUpPasswordInput = document.querySelector('#new-password');
 const signUpConfirmNewPasswordInput = document.querySelector('#confirm-new-password');
-
+const signInData = JSON.parse(localStorage.getItem('signInData'));
 const toggleContent = (content) => (content === 'New User?' ? 'Sign in?' : 'New User?');
 signInUpToggleBtn.addEventListener('click', () => {
   signInUpToggleBtn.textContent = toggleContent(signInUpToggleBtn.textContent);
@@ -63,3 +63,8 @@ signUpForm.addEventListener('submit', (e) => {
     alert('password and confirm password not match');
   }
 });
+
+if (signInData) {
+  signInUserNameInput.value = signInData?.userName;
+  signInPasswordInput.value = signInData?.password;
+}
